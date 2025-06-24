@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{overflow-x:hidden;background:#000;color:#fff}
+section{height:100vh;width:100vw;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;position:relative;overflow:hidden}
+#page1{background:url('https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover}
+#page2{background:url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover}
+#page3{background:url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover}
+#page4{background:url('https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover}
+h1{font-size:3rem;margin-bottom:20px;text-align:center;text-shadow:0 0 10px #000;opacity:0;transform:translateY(50px);transition:all 1s ease}
+p{font-size:1.1rem;max-width:800px;margin-bottom:15px;text-align:center;opacity:0;transform:translateY(30px);transition:all 0.8s ease}
+.visible{opacity:1!important;transform:translateY(0)!important}
+.nav-btn{position:fixed;right:30px;width:50px;height:50px;background:rgba(255,255,255,0.3);color:#fff;border:none;border-radius:50%;font-size:1.5rem;cursor:pointer;z-index:100;transition:all 0.3s}
+.nav-btn:hover{background:rgba(255,255,255,0.5)}
+#next-btn{bottom:30px}
+#prev-btn{bottom:90px;display:none}
+.content{background:rgba(0,0,0,0.7);padding:30px;border-radius:10px;max-width:800px;width:90%}
+.rocket{position:absolute;width:80px;height:80px;bottom:-80px;left:50%;transform:translateX(-50%);transition:all 1.5s ease}
+.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle 3s infinite alternate}
+@keyframes twinkle{0%{opacity:0.2}100%{opacity:1}}
+.alien{position:absolute;width:60px;height:60px;opacity:0;transition:all 1s ease;border-radius:50%;animation:float 4s infinite ease-in-out}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+.comet{position:absolute;width:15px;height:3px;background:linear-gradient(90deg,#fff,transparent);opacity:0}
+.ticket{background:#fff;color:#000;padding:20px;border-radius:10px;max-width:400px;margin:20px auto;transform:scale(0);transition:all 0.8s ease;box-shadow:0 0 20px #fff}
+.btn{background:#f00;color:#fff;border:none;padding:12px 25px;border-radius:5px;font-size:1.1rem;cursor:pointer;margin-top:15px;transition:all 0.3s;display:block;width:200px;margin:20px auto 0}
+.btn:hover{background:#ff5050;transform:scale(1.05)}
+.feature{display:flex;align-items:center;margin:10px 0;opacity:0;transform:translateX(-50px);transition:all 0.6s ease}
+.feature i{font-size:1.5rem;margin-right:15px;color:#4CAF50}
+.text-block{margin:15px 0;opacity:0;transform:translateY(20px);transition:all 0.6s ease}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<section id="page1">
+  <div class="content">
+    <h1>КОСМИЧЕСКОЕ ШОУ 2024</h1>
+    <div class="text-block">
+      <p>Приготовьтесь к незабываемому путешествию по просторам Вселенной!</p>
+      <p>Наше шоу сочетает в себе последние технологии визуализации космоса и реальные научные данные, собранные NASA и Роскосмосом.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-rocket"></i>
+      <p>Уникальные 3D-проекции космических объектов в натуральную величину</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-star"></i>
+      <p>Эффекты невесомости и полного погружения</p>
+    </div>
+  </div>
+  <img class="rocket" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSJ3aGl0ZSIgZD0iTTUwNS4yIDM5LjJjOC40LTguNCA4LjQtMjIgMC0zMC44bC0xMTcuMS0xMTdjLTguNC04LjQtMjItOC40LTMwLjggMEwxNDQgMjA4VjgwYzAtMTMuMy0xMC43LTI0LTI0LTI0SDI0QzEwLjcgNTYgMCA2Ni43IDAgODB2MzUyYzAgMTMuMyAxMC43IDI0IDI0IDI0aDk2YzEzLjMgMCAyNC0xMC43IDI0LTI0VjMwNGw3Ni4xIDc2LjFjNC40IDQuNCAxMC4yIDYuOCAxNiA2LjggNS44IDAgMTEuNi0yLjMgMTYuMS02LjggMTMuMS0xMy4xIDEzLjEtMzQuMiAwLTQ3LjJMMjA4IDI1NmwxMjguMS0xMjguMWMxMy4xLTEzLjEgMTMuMS0zNC4yIDAtNDcuMnoiLz48L3N2Zz4=" alt="Ракета">
+</section>
+
+<section id="page2">
+  <div class="content">
+    <h1>ЧТО ВАС ЖДЕТ?</h1>
+    <div class="text-block">
+      <p>Шоу длительностью 2 часа включает в себя 5 уникальных разделов, каждый из которых посвящен разным аспектам космоса.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-meteor"></i>
+      <p>Путешествие по Солнечной системе с детальным обзором каждой планеты</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-atom"></i>
+      <p>Экскурс в историю освоения космоса от первых спутников до современных миссий</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-user-astronaut"></i>
+      <p>Интерактивная демонстрация жизни космонавтов на МКС</p>
+    </div>
+  </div>
+  <div class="alien" style="top:30%;left:20%;background:#7cfc00"></div>
+  <div class="alien" style="top:60%;right:25%;background:#ff69b4"></div>
+</section>
+
+<section id="page3">
+  <div class="content">
+    <h1>НАШИ ЭКСПЕРТЫ</h1>
+    <div class="text-block">
+      <p>В создании шоу принимали участие ведущие ученые и космонавты, которые поделятся своими знаниями и опытом.</p>
+      <p>После каждого представления запланирована 30-минутная сессия вопросов и ответов.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <p>Лекции доктора физико-математических наук А.И. Петрова</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-space-shuttle"></i>
+      <p>Рассказы космонавта-испытателя С.К. Волкова</p>
+    </div>
+  </div>
+  <div class="comet" style="top:20%;left:10%"></div>
+  <div class="comet" style="top:40%;left:70%"></div>
+  <div class="comet" style="top:80%;left:30%"></div>
+</section>
+
+<section id="page4">
+  <div class="content">
+    <h1>ЗАБРОНИРУЙТЕ БИЛЕТЫ</h1>
+    <div class="text-block">
+      <p>Шоу проходит с 15 октября по 20 декабря 2024 года в планетарии города.</p>
+      <p>Количество мест ограничено - в зале всего 200 посадочных мест для максимального комфорта.</p>
+    </div>
+    <div class="ticket">
+      <h3 style="text-align:center;color:#000;margin-bottom:15px">VIP-БИЛЕТ</h3>
+      <p><i class="fas fa-check"></i> Лучшие места в центре зала</p>
+      <p><i class="fas fa-check"></i> Встреча с космонавтами после шоу</p>
+      <p><i class="fas fa-check"></i> Подарочный набор космической еды</p>
+      <p style="font-size:1.8rem;color:#f00;text-align:center;margin:15px 0">5000 ₽</p>
+      <button class="btn">ЗАБРОНИРОВАТЬ</button>
+    </div>
+  </div>
+</section>
+
+<button class="nav-btn" id="prev-btn">↑</button>
+<button class="nav-btn" id="next-btn">↓</button>
+
+<script>
+let cp=1
+const pb=document.getElementById('prev-btn')
+const nb=document.getElementById('next-btn')
+
+function sp(p){
+window.scrollTo({top:(p-1)*window.innerHeight,behavior:'smooth'})
+const s=document.querySelectorAll('section')[p-1]
+s.querySelectorAll('h1,p,.feature,.text-block').forEach((e,i)=>{setTimeout(()=>e.classList.add('visible'),i*200)})
+
+if(p===1){
+document.querySelector('.rocket').style.bottom='50px'
+document.querySelectorAll('.feature').forEach((f,i)=>{setTimeout(()=>f.style.transform='translateX(0)',i*300+500)})
+}
+if(p===2){
+document.querySelectorAll('.alien').forEach((a,i)=>{setTimeout(()=>{a.style.opacity='1'},i*400)})
+}
+if(p===3){
+document.querySelectorAll('.comet').forEach((c,i)=>{setTimeout(()=>{
+c.style.opacity='1'
+c.style.left=`${Math.random()*70+15}%`
+c.style.top=`${Math.random()*70+15}%`
+c.style.transform=`translate(${Math.random()*400-200}px,${Math.random()*400-200}px)`
+c.style.transition=`all ${4+Math.random()*4}s linear`
+},i*300)})
+}
+if(p===4){
+setTimeout(()=>{document.querySelector('.ticket').style.transform='scale(1)'},300)
+}
+
+cp=p
+pb.style.display=cp===1?'none':'block'
+nb.style.display=cp===4?'none':'block'
+}
+
+nb.addEventListener('click',()=>{if(cp<4)sp(cp+1)})
+pb.addEventListener('click',()=>{if(cp>1)sp(cp-1)})
+
+window.addEventListener('wheel',e=>{
+if(e.deltaY>0&&cp<4)sp(cp+1)
+else if(e.deltaY<0&&cp>1)sp(cp-1)
+})
+
+document.addEventListener('keydown',e=>{
+if(e.key==='ArrowDown'&&cp<4)sp(cp+1)
+else if(e.key==='ArrowUp'&&cp>1)sp(cp-1)
+})
+
+for(let i=0;i<100;i++){
+const s=document.createElement('div')
+s.className='star'
+s.style.width=`${Math.random()*2+1}px`
+s.style.height=s.style.width
+s.style.left=`${Math.random()*100}%`
+s.style.top=`${Math.random()*100}%`
+s.style.animationDelay=`${Math.random()*3}s`
+document.body.appendChild(s)
+}
+
+sp(1)
+</script>
+</body>
+</html>
